@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey / Contact | Integrity Management Program</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+    <!-- NAVIGATION -->
+    <div class="nav">
+        <a class="brand" href="index.html"><img src="coa-logo.jpg" alt="COA / IMP - Commission on Audit"></a>
+        <a class="tab-home" href="index.html">Home</a>
+        <a class="tab-about" href="about.html">About / FAQ</a>
+        <a class="tab-framework" href="framework.html">Framework</a>
+        <a class="tab-gallery" href="gallery.html">Gallery</a>
+        <a class="tab-survey active" href="survey.html">Survey</a>
+    </div>
+
+    <div class="page-banner">IMP Survey</div>
+
+    <div class="content">
+
+        <!-- LEFT: FORM -->
+        <div class="survey-left">
+            <h2 class="title title-first">Survey Form</h2>
+
+            <form onsubmit="return false">
+                <div class="form-row">
+                    <label for="name">Name (optional)</label>
+                    <input id="name" type="text" placeholder="Enter your name">
+                </div>
+
+                <div class="form-row">
+                    <label>Question 1</label>
+                    How familiar are you with the IMP? &bull; Very familiar &bull; Somewhat familiar &bull; Heard of it &bull; Not familiar
+                </div>
+
+                <div class="form-row">
+                    <label>Question 2</label>
+                    Which practice supports integrity? &bull; Transparency &bull; Ethical standards &bull; Risk reporting &bull; All of the above
+                </div>
+
+                <div class="form-row">
+                    <label>Question 3</label>
+                    Which topic would you like to learn more about? &bull; Risk identification &bull; Integrity measures &bull; Monitoring
+                </div>
+
+                <button class="btn" type="submit" style="width:275px; height:46px; line-height:46px;">Submit Survey</button>
+            </form>
+
+            <p class="note">Prototype only: this mockup does not submit or store survey responses.</p>
+        </div>
+
+        <!-- RIGHT: CONTACT -->
+        <div class="survey-right">
+            <div class="side-card contact">
+                <h3>Contact / Feedback</h3>
+                <p>For verified contact information, use the official COA website.</p>
+                <p>Official IMP: web.coa.gov.ph/imp/</p>
+            </div>
+
+            <div class="side-card thanks">
+                <h3>Thank You</h3>
+                <p>Thank you for sharing your feedback.</p>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <span class="left">Commission on Audit &bull; Integrity Management Program</span>
+        <span class="right"><a href="https://web.coa.gov.ph/imp/">Intensified Management Program on Integrity of COA</a></span>
+    </div>
+    <p class="footer-note">Student HTML project based on the supplied IMP mockup and the official COA IMP website.</p>
+
+</div>
+</body>
+</html>

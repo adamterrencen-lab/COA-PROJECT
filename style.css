@@ -1,0 +1,826 @@
+/* ==========================================================
+   COA / IMP — simple style.css (copy of the Canva design)
+   Only basic CSS: colors, fonts, widths, margins, padding,
+   borders, floats. Every piece of the page has a class name.
+   ========================================================== */
+
+/* ---------- Basics ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Schibsted Grotesk", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #0d2f4f;
+  background-color: #ffffff;
+}
+
+a {
+  color: #25669a;
+}
+
+img {
+  border: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.row {
+  overflow: hidden;
+}
+
+/* page width */
+.wrap {
+  max-width: 1456px;
+  margin: 0 auto;
+  padding: 37px 48px 20px 48px;
+}
+
+/* inner space used by most pages */
+.content {
+  padding: 0 50px 0 50px;
+}
+
+/* ---------- Navigation bar ---------- */
+/* logo on the left; the buttons sit in the exact middle (x and y) of the bar */
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 156px;
+  padding: 8px 25px 8px 25px;
+  background-color: #0d2f4f;
+}
+
+.nav-tabs {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.nav a {
+  display: inline-block;
+  vertical-align: middle;
+  height: 42px;
+  line-height: 42px;
+  margin: 0 6px;
+  background-color: #ffffff;
+  color: #0d2f4f;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background-color: #e0ecf5;
+}
+
+/* COA logo in the nav bar (bigger) */
+.nav .brand {
+  width: 140px;
+  height: 140px;
+  margin: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.nav .brand img {
+  display: block;
+  width: 161px;
+  height: 161px;
+  margin: -10px 0 0 -10px;
+}
+
+.nav .tab-home      { width: 124px; }
+.nav .tab-about     { width: 171px; }
+.nav .tab-framework { width: 172px; }
+.nav .tab-gallery   { width: 139px; }
+.nav .tab-survey    { width: 131px; }
+
+/* the tab of the page you are on */
+.nav a.active {
+  background-color: #25669a;
+  color: #ffffff;
+}
+
+/* ---------- Headings and banners ---------- */
+.hero {
+  position: relative;
+  height: 157px;
+  margin: 29px 44px 0 44px;
+  padding: 28px 20px 0 20px;
+  background-color: #0d2f4f;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* IMP logo on the left of the dark blue banner (light-colored copy of the logo) */
+.hero-logo {
+  position: absolute;
+  left: 30px;
+  top: 12px;
+  height: 133px;
+}
+
+.hero h1 {
+  margin: 0 0 25px 0;
+  font-size: 26px;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #dbe8f3;
+  text-transform: uppercase;
+}
+
+.page-banner {
+  margin-top: 12px;
+  padding: 16px 20px 16px 20px;
+  background-color: #0d2f4f;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 42px 0 18px 0;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #0d2f4f;
+}
+
+.title-first {
+  margin-top: 34px;
+}
+
+.hint {
+  margin: -12px 0 14px 3px;
+  font-size: 11px;
+  color: #6b7f93;
+}
+
+.note {
+  margin: 20px 0 0 0;
+  font-size: 12px;
+  color: #6b7f93;
+}
+
+.text {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #2c4560;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: block;
+  width: 375px;
+  max-width: 100%;
+  height: 60px;
+  line-height: 60px;
+  margin: 17px auto 0 auto;
+  background-color: #25669a;
+  color: #ffffff;
+  border: 0;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #1d5483;
+}
+
+/* ---------- HOME ---------- */
+.card {
+  min-height: 163px;
+  padding: 14px 12px 14px 12px;
+  background-color: #ffffff;
+  border: 1px solid #bdd3e3;
+  border-radius: 16px;
+}
+
+.card-left {
+  float: left;
+  width: 57.4%;
+}
+
+.card-right {
+  float: right;
+  width: 40.4%;
+}
+
+.card h3 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+}
+
+.card p {
+  margin: 0;
+  padding: 0 3px 0 3px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #2c4560;
+}
+
+.banner {
+  overflow: hidden;
+  min-height: 90px;
+  margin-top: 36px;
+  padding: 18px 28px 18px 28px;
+  background-color: #e0ecf5;
+  border: 1px solid #bdd3e3;
+  border-radius: 10px;
+}
+
+.banner .label {
+  float: left;
+  width: 180px;
+  margin-right: 54px;
+  padding-top: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #25669a;
+  text-transform: uppercase;
+}
+
+.banner .message {
+  margin: 0;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #0d2f4f;
+}
+
+/* "Explore" blue link buttons */
+.link-box {
+  float: left;
+  width: 23.5%;
+  height: 66px;
+  margin-right: 2%;
+  padding: 14px 12px 14px 12px;
+  background-color: #25669a;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.link-box:hover {
+  background-color: #1d5483;
+}
+
+.link-last {
+  margin-right: 0;
+}
+
+/* numbered characteristic cards */
+.num-card {
+  margin-bottom: 12px;
+  padding: 16px 20px 16px 20px;
+  overflow: hidden;
+  background-color: #e0ecf5;
+  border: 1px solid #bdd3e3;
+  border-radius: 16px;
+}
+
+.num-card .big-num {
+  float: left;
+  width: 40px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #25669a;
+}
+
+.num-card p {
+  margin: 0 0 0 40px;
+  font-size: 12px;
+  color: #2c4560;
+}
+
+/* ---------- ABOUT / FAQ ---------- */
+.faq {
+  margin: 0 9px 23px 9px;
+  background-color: #ffffff;
+  border: 1px solid #bdd3e3;
+  border-radius: 4px;
+}
+
+.faq summary {
+  padding: 14px 28px 14px 13px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0d2f4f;
+  list-style: none;
+  cursor: pointer;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+/* the + sign on the right; it turns into a minus when open */
+.faq summary::after {
+  content: "+";
+  float: right;
+  font-size: 18px;
+  color: #25669a;
+}
+
+.faq[open] {
+  border-radius: 16px;
+}
+
+.faq[open] summary::after {
+  content: "\2212";
+}
+
+.faq p {
+  margin: 0;
+  padding: 0 20px 30px 19px;
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: #2c4560;
+}
+
+/* ---------- FRAMEWORK ---------- */
+.step {
+  float: left;
+  width: 23.2%;
+  min-height: 178px;
+  margin-right: 2.4%;
+  padding: 21px 20px 20px 20px;
+  background-color: #e0ecf5;
+  border: 1px solid #bdd3e3;
+  border-radius: 16px;
+}
+
+.step-last {
+  margin-right: 0;
+}
+
+.step .num {
+  margin-right: 14px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #25669a;
+}
+
+.step h3 {
+  display: inline;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.step p {
+  margin: 14px 0 0 0;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: #2c4560;
+}
+
+/* tables */
+.table {
+  width: 100%;
+  margin-bottom: 8px;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  font-size: 10.5px;
+}
+
+.table caption {
+  padding-bottom: 8px;
+  text-align: left;
+  font-size: 11px;
+  color: #6b7f93;
+}
+
+.table th {
+  height: 46px;
+  padding: 0 10px 0 10px;
+  background-color: #0d2f4f;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.table td {
+  height: 57px;
+  padding: 0 8px 0 8px;
+  border: 1px solid #bdd3e3;
+  color: #2c4560;
+}
+
+.table .alt td {
+  background-color: #edf5f9;
+}
+
+.table .first {
+  font-weight: bold;
+  color: #0d2f4f;
+}
+
+.table .center {
+  text-align: center;
+}
+
+/* ---------- GALLERY ---------- */
+.gcard {
+  float: left;
+  width: 31.6%;
+  height: 262px;
+  margin: 0 2.6% 35px 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid #bdd3e3;
+  border-radius: 16px;
+}
+
+.gcard-last {
+  margin-right: 0;
+}
+
+.gthumb {
+  height: 87px;
+  line-height: 87px;
+  background-color: #e0ecf5;
+  color: #25669a;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.gbody {
+  padding: 17px 16px 18px 16px;
+}
+
+.gbody h3 {
+  margin: 0 0 14px 0;
+  font-size: 11px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.gbody .desc {
+  margin: 0 0 14px 0;
+  font-size: 10.5px;
+  color: #2c4560;
+}
+
+.gbody .date {
+  margin: 0 0 8px 0;
+  font-size: 10px;
+  color: #6b7f93;
+}
+
+.gbody .glink {
+  margin: 0;
+  font-size: 10px;
+}
+
+
+/* ---------- Gallery photos (inside a card) ---------- */
+.gcard-photos {
+  height: auto;
+  min-height: 262px;
+}
+
+.photos {
+  margin-top: 14px;
+  overflow: hidden;
+}
+
+.photos summary {
+  font-size: 11px;
+  font-weight: bold;
+  color: #25669a;
+  cursor: pointer;
+}
+
+.photos a {
+  float: left;
+  width: 30%;
+  margin: 8px 3% 0 0;
+}
+
+.photos img {
+  display: block;
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid #bdd3e3;
+  border-radius: 6px;
+}
+
+/* ---------- SURVEY ---------- */
+.survey-left {
+  float: left;
+  width: 61.5%;
+}
+
+.survey-right {
+  float: right;
+  width: 31.7%;
+  margin-top: 34px;
+}
+
+.form-row {
+  overflow: hidden;
+  height: 68px;
+  margin-bottom: 17px;
+  padding: 12px 10px 12px 10px;
+  background-color: #f5f9fc;
+  border: 1px solid #bdd3e3;
+  border-radius: 4px;
+  font-size: 10.5px;
+  color: #2c4560;
+}
+
+.form-row label {
+  float: left;
+  width: 156px;
+  font-weight: bold;
+  color: #0d2f4f;
+}
+
+.form-row input {
+  width: 70%;
+  border: 0;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 10.5px;
+  color: #2c4560;
+}
+
+.side-card {
+  padding: 26px 30px 20px 30px;
+  background-color: #e0ecf5;
+  border: 1px solid #bdd3e3;
+  border-radius: 22px;
+  font-size: 11px;
+  text-align: center;
+  color: #2c4560;
+}
+
+.side-card h3 {
+  margin: 0 0 48px 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #0d2f4f;
+}
+
+.side-card p {
+  margin: 0 0 14px 0;
+}
+
+.contact {
+  height: 219px;
+}
+
+.thanks {
+  height: 104px;
+  margin-top: 29px;
+  padding-top: 20px;
+  background-color: #edf5f9;
+  border-radius: 16px;
+}
+
+.thanks h3 {
+  margin-bottom: 17px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  overflow: hidden;
+  height: 54px;
+  line-height: 50px;
+  margin-top: 16px;
+  padding: 0 27px 0 27px;
+  background-color: #e5edf4;
+  border: 2px solid #bdd3e3;
+  font-size: 9.5px;
+  color: #6b7f93;
+  text-transform: uppercase;
+}
+
+.footer .left {
+  float: left;
+  font-weight: bold;
+}
+
+.footer .right {
+  float: right;
+}
+
+.footer a {
+  color: #6b7f93;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.footer-note {
+  margin: 8px 0 0 0;
+  font-size: 10px;
+  color: #6b7f93;
+}
+
+/* ---------- Narrow screens: logo on top, buttons below ---------- */
+@media (max-width: 1100px) {
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 0;
+  }
+
+  .nav-tabs {
+    position: static;
+    transform: none;
+    flex-basis: 100%;
+    margin-top: 12px;
+    white-space: normal;
+  }
+}
+
+/* ---------- Phone screens ---------- */
+@media (max-width: 760px) {
+  .wrap {
+    padding: 14px 14px 14px 14px;
+  }
+
+  .content {
+    padding: 0 16px 0 16px;
+  }
+
+  .nav {
+    padding: 8px 12px 4px 12px;
+  }
+
+  .nav-tabs {
+    margin-top: 8px;
+  }
+
+  .nav a {
+    height: 32px;
+    line-height: 32px;
+    margin: 0 3px 4px 3px;
+    font-size: 9px;
+  }
+
+  .nav .brand {
+    width: 70px;
+    height: 70px;
+    margin: 0;
+  }
+
+  .nav .brand img {
+    width: 81px;
+    height: 81px;
+    margin: -5px 0 0 -5px;
+  }
+
+  .nav .tab-home,
+  .nav .tab-about,
+  .nav .tab-framework,
+  .nav .tab-gallery,
+  .nav .tab-survey {
+    width: auto;
+    padding: 0 12px 0 12px;
+  }
+
+  .hero {
+    height: auto;
+    margin: 8px 11px 0 11px;
+    padding: 20px 10px 22px 10px;
+  }
+
+  .hero-logo {
+    position: static;
+    display: block;
+    height: 70px;
+    margin: 0 auto 10px auto;
+  }
+
+  .hero h1 {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+
+  .hero p {
+    font-size: 11px;
+  }
+
+  .title {
+    margin: 22px 0 14px 0;
+    font-size: 14px;
+  }
+
+  .card-left,
+  .card-right,
+  .link-box,
+  .step,
+  .gcard,
+  .survey-left,
+  .survey-right {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .card,
+  .step {
+    height: auto;
+    min-height: 0;
+    margin-bottom: 12px;
+    padding-bottom: 14px;
+  }
+
+  .banner .label {
+    float: none;
+    width: auto;
+    margin: 0 0 6px 0;
+  }
+
+  .link-box {
+    margin-bottom: 8px;
+  }
+
+  .faq summary {
+    font-size: 11px;
+  }
+
+  .table {
+    font-size: 9px;
+  }
+
+  .gcard {
+    height: auto;
+    margin-bottom: 12px;
+  }
+
+  .photos a {
+    width: 47%;
+    margin-right: 3%;
+  }
+
+  .form-row {
+    height: auto;
+  }
+
+  .form-row label {
+    float: none;
+    width: auto;
+    display: block;
+  }
+
+  .side-card,
+  .contact,
+  .thanks {
+    height: auto;
+  }
+
+  .side-card h3 {
+    margin-bottom: 12px;
+  }
+
+  .footer {
+    height: auto;
+    line-height: 1.5;
+    padding: 10px 12px 10px 12px;
+  }
+
+  .footer .left,
+  .footer .right {
+    float: none;
+  }
+}
