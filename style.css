@@ -1,7 +1,7 @@
 /* ==========================================================
-   COA / IMP — simple style.css (copy of the Canva design)
-   Only basic CSS: colors, fonts, widths, margins, padding,
-   borders, floats. Every piece of the page has a class name.
+   COA / IMP — style.css (complete file, replaces the old one)
+   Includes: original design + styles for script.js
+   + mobile fixes (Explore buttons, hamburger menu) + gallery tools
    ========================================================== */
 
 /* ---------- Basics ---------- */
@@ -34,6 +34,14 @@ img {
   overflow: hidden;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
+.is-hidden {
+  display: none;
+}
+
 /* page width */
 .wrap {
   max-width: 1456px;
@@ -47,7 +55,6 @@ img {
 }
 
 /* ---------- Navigation bar ---------- */
-/* logo on the left; the buttons sit in the exact middle (x and y) of the bar */
 .nav {
   position: relative;
   display: flex;
@@ -104,16 +111,22 @@ img {
   margin: -10px 0 0 -10px;
 }
 
-.nav .tab-home      { width: 124px; }
-.nav .tab-about     { width: 171px; }
+.nav .tab-home { width: 124px; }
+.nav .tab-about { width: 171px; }
 .nav .tab-framework { width: 172px; }
-.nav .tab-gallery   { width: 139px; }
-.nav .tab-survey    { width: 131px; }
+.nav .tab-gallery { width: 139px; }
+.nav .tab-survey { width: 131px; }
 
 /* the tab of the page you are on */
 .nav a.active {
   background-color: #25669a;
   color: #ffffff;
+}
+
+/* hamburger button + "COA IMP" title (made by script.js, phone only) */
+.nav .nav-toggle,
+.nav .nav-title {
+  display: none;
 }
 
 /* ---------- Headings and banners ---------- */
@@ -127,7 +140,6 @@ img {
   text-align: center;
 }
 
-/* IMP logo on the left of the dark blue banner (light-colored copy of the logo) */
 .hero-logo {
   position: absolute;
   left: 30px;
@@ -277,6 +289,7 @@ img {
 
 /* "Explore" blue link buttons */
 .link-box {
+  display: block;
   float: left;
   width: 23.5%;
   height: 66px;
@@ -346,7 +359,6 @@ img {
   display: none;
 }
 
-/* the + sign on the right; it turns into a minus when open */
 .faq summary::after {
   content: "+";
   float: right;
@@ -380,6 +392,13 @@ img {
   background-color: #e0ecf5;
   border: 1px solid #bdd3e3;
   border-radius: 16px;
+  cursor: pointer;
+}
+
+.step:hover,
+.step.is-active {
+  border-color: #25669a;
+  background-color: #cfe2f0;
 }
 
 .step-last {
@@ -407,7 +426,11 @@ img {
   color: #2c4560;
 }
 
-/* tables */
+/* tables (script.js wraps them so they scroll sideways on phones) */
+.table-wrap {
+  overflow-x: auto;
+}
+
 .table {
   width: 100%;
   margin-bottom: 8px;
@@ -451,6 +474,24 @@ img {
 
 .table .center {
   text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 12px 3px 12px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.badge-monitor {
+  background-color: #25669a;
+}
+
+.badge-review {
+  background-color: #6b7f93;
 }
 
 /* ---------- GALLERY ---------- */
@@ -509,8 +550,7 @@ img {
   font-size: 10px;
 }
 
-
-/* ---------- Gallery photos (inside a card) ---------- */
+/* gallery photos (inside a card) */
 .gcard-photos {
   height: auto;
   min-height: 262px;
@@ -532,6 +572,8 @@ img {
   float: left;
   width: 30%;
   margin: 8px 3% 0 0;
+  overflow: hidden;
+  border-radius: 6px;
 }
 
 .photos img {
@@ -541,6 +583,217 @@ img {
   object-fit: cover;
   border: 1px solid #bdd3e3;
   border-radius: 6px;
+  transition: transform 0.2s;
+}
+
+.photos a:hover img {
+  transform: scale(1.12);
+}
+
+/* --- gallery tools made by script.js --- */
+.g-toolbar {
+  margin: 0 0 22px 0;
+  padding: 14px 16px 10px 16px;
+  background-color: #e0ecf5;
+  border: 1px solid #bdd3e3;
+  border-radius: 12px;
+}
+
+.g-controls {
+  overflow: hidden;
+}
+
+.g-search {
+  float: left;
+  width: 60%;
+  height: 38px;
+  padding: 0 12px 0 12px;
+  border: 1px solid #bdd3e3;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 12px;
+  color: #0d2f4f;
+}
+
+.g-sort {
+  float: right;
+  width: 36%;
+  height: 38px;
+  padding: 0 8px 0 8px;
+  border: 1px solid #bdd3e3;
+  border-radius: 6px;
+  background-color: #ffffff;
+  font-family: inherit;
+  font-size: 12px;
+  color: #0d2f4f;
+}
+
+.g-chips {
+  margin-top: 12px;
+}
+
+.g-chip {
+  margin: 0 6px 6px 0;
+  padding: 7px 14px 7px 14px;
+  background-color: #ffffff;
+  border: 1px solid #bdd3e3;
+  border-radius: 16px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: bold;
+  color: #25669a;
+  cursor: pointer;
+}
+
+.g-chip:hover {
+  background-color: #cfe2f0;
+}
+
+.g-chip.is-active {
+  background-color: #25669a;
+  border-color: #25669a;
+  color: #ffffff;
+}
+
+.g-count {
+  margin: 4px 0 0 0;
+  font-size: 11px;
+  color: #6b7f93;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.gallery-grid .gcard {
+  float: none;
+  width: auto;
+  margin: 0;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.gallery-grid .gcard:hover {
+  box-shadow: 0 6px 18px rgba(13, 47, 79, 0.18);
+  transform: translateY(-3px);
+}
+
+.gallery-grid .gcard[hidden] {
+  display: none;
+}
+
+.gallery-grid .gthumb {
+  cursor: pointer;
+}
+
+.gallery-grid .gthumb:hover {
+  background-color: #cfe2f0;
+}
+
+.g-empty {
+  margin: 20px 0 20px 0;
+  padding: 24px;
+  background-color: #edf5f9;
+  border: 1px dashed #bdd3e3;
+  border-radius: 12px;
+  text-align: center;
+  color: #6b7f93;
+}
+
+.g-empty[hidden] {
+  display: none;
+}
+
+/* --- lightbox (photo viewer) --- */
+.lightbox {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  background-color: rgba(5, 25, 45, 0.93);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lb-figure {
+  margin: 0;
+  max-width: 80%;
+  text-align: center;
+}
+
+.lb-img {
+  display: block;
+  max-width: 100%;
+  max-height: 78vh;
+  margin: 0 auto;
+  border: 3px solid #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.lb-caption {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #dbe8f3;
+}
+
+.lb-close,
+.lb-prev,
+.lb-next,
+.lb-play {
+  position: absolute;
+  background-color: transparent;
+  border: 0;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.lb-close {
+  top: 14px;
+  right: 22px;
+  font-size: 40px;
+}
+
+.lb-play {
+  top: 22px;
+  left: 22px;
+  padding: 6px 14px 6px 14px;
+  border: 1px solid #ffffff;
+  border-radius: 16px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.lb-prev,
+.lb-next {
+  top: 50%;
+  margin-top: -30px;
+  font-size: 60px;
+  line-height: 60px;
+}
+
+.lb-prev { left: 18px; }
+.lb-next { right: 18px; }
+
+.lb-close:hover,
+.lb-prev:hover,
+.lb-next:hover {
+  color: #8ec3ea;
+}
+
+.lb-play:hover {
+  background-color: #25669a;
 }
 
 /* ---------- SURVEY ---------- */
@@ -583,6 +836,49 @@ img {
   color: #2c4560;
 }
 
+.question {
+  margin: 0 0 17px 0;
+  padding: 12px 14px 12px 14px;
+  background-color: #f5f9fc;
+  border: 1px solid #bdd3e3;
+  border-radius: 4px;
+}
+
+.question legend {
+  padding: 0 6px 0 6px;
+  font-weight: bold;
+  color: #0d2f4f;
+}
+
+.question p {
+  margin: 0 0 6px 0;
+}
+
+.question .option {
+  display: block;
+  padding: 3px 0 3px 0;
+  cursor: pointer;
+}
+
+.question.has-error {
+  border-color: #c0392b;
+  background-color: #fdf3f2;
+}
+
+.form-error {
+  margin: 0 0 10px 0;
+  padding: 8px 12px 8px 12px;
+  background-color: #fdf3f2;
+  border: 1px solid #c0392b;
+  border-radius: 4px;
+  color: #c0392b;
+  font-weight: bold;
+}
+
+.form-error[hidden] {
+  display: none;
+}
+
 .side-card {
   padding: 26px 30px 20px 30px;
   background-color: #e0ecf5;
@@ -620,6 +916,10 @@ img {
   margin-bottom: 17px;
 }
 
+.side-card.is-hidden {
+  display: none;
+}
+
 /* ---------- Footer ---------- */
 .footer {
   overflow: hidden;
@@ -655,7 +955,35 @@ img {
   color: #6b7f93;
 }
 
-/* ---------- Narrow screens: logo on top, buttons below ---------- */
+/* ---------- Back to top ---------- */
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 500;
+  width: 42px;
+  height: 42px;
+  background-color: #25669a;
+  border: 0;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+}
+
+.to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.to-top:hover {
+  background-color: #1d5483;
+}
+
+/* ---------- Narrow screens / tablets ---------- */
 @media (max-width: 1100px) {
   .nav {
     flex-wrap: wrap;
@@ -670,6 +998,10 @@ img {
     margin-top: 12px;
     white-space: normal;
   }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ---------- Phone screens ---------- */
@@ -682,22 +1014,15 @@ img {
     padding: 0 16px 0 16px;
   }
 
+  /* --- nav: logo + "COA IMP" + hamburger, like the mobile mockup --- */
   .nav {
-    padding: 8px 12px 4px 12px;
-  }
-
-  .nav-tabs {
-    margin-top: 8px;
-  }
-
-  .nav a {
-    height: 32px;
-    line-height: 32px;
-    margin: 0 3px 4px 3px;
-    font-size: 9px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 12px 10px 12px;
   }
 
   .nav .brand {
+    order: 1;
     width: 70px;
     height: 70px;
     margin: 0;
@@ -709,13 +1034,66 @@ img {
     margin: -5px 0 0 -5px;
   }
 
-  .nav .tab-home,
-  .nav .tab-about,
-  .nav .tab-framework,
-  .nav .tab-gallery,
-  .nav .tab-survey {
-    width: auto;
-    padding: 0 12px 0 12px;
+  .nav .nav-title {
+    order: 2;
+    display: block;
+    margin-left: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  .nav .nav-toggle {
+    order: 3;
+    display: block;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
+    padding: 0;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 42px;
+    cursor: pointer;
+  }
+
+  .nav .nav-toggle:hover {
+    background-color: #25669a;
+  }
+
+  /* menu links are hidden until the hamburger is pressed */
+  .nav > a:not(.brand),
+  .nav .nav-tabs {
+    display: none;
+  }
+
+  .nav.menu-open > a:not(.brand) {
+    order: 4;
+    display: block;
+    flex-basis: 100%;
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    margin: 6px 0 0 0;
+    padding: 0;
+  }
+
+  .nav.menu-open .nav-tabs {
+    order: 4;
+    display: block;
+    flex-basis: 100%;
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .nav.menu-open .nav-tabs a {
+    display: block;
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    margin: 6px 0 0 0;
   }
 
   .hero {
@@ -747,7 +1125,6 @@ img {
 
   .card-left,
   .card-right,
-  .link-box,
   .step,
   .gcard,
   .survey-left,
@@ -771,8 +1148,20 @@ img {
     margin: 0 0 6px 0;
   }
 
+  /* EXPLORE THE IMP WEBSITE: two buttons per row (fixes stacked buttons) */
   .link-box {
-    margin-bottom: 8px;
+    display: block;
+    float: left;
+    width: 48.5%;
+    height: auto;
+    min-height: 66px;
+    margin: 0 3% 8px 0;
+    padding: 12px 8px 12px 8px;
+    font-size: 10px;
+  }
+
+  .link-box:nth-child(even) {
+    margin-right: 0;
   }
 
   .faq summary {
@@ -780,6 +1169,7 @@ img {
   }
 
   .table {
+    min-width: 520px;
     font-size: 9px;
   }
 
@@ -788,8 +1178,25 @@ img {
     margin-bottom: 12px;
   }
 
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .gallery-grid .gcard {
+    width: 100%;
+  }
+
+  .g-search,
+  .g-sort {
+    float: none;
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
   .photos a {
-    width: 47%;
+    width: 30%;
     margin-right: 3%;
   }
 
@@ -809,6 +1216,10 @@ img {
     height: auto;
   }
 
+  .survey-right {
+    margin-top: 12px;
+  }
+
   .side-card h3 {
     margin-bottom: 12px;
   }
@@ -822,5 +1233,24 @@ img {
   .footer .left,
   .footer .right {
     float: none;
+  }
+
+  .lb-figure {
+    max-width: 92%;
+  }
+
+  .lb-prev,
+  .lb-next {
+    font-size: 44px;
+  }
+}
+
+/* very small phones: Explore buttons go one per row */
+@media (max-width: 400px) {
+  .link-box {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+    min-height: 54px;
   }
 }
